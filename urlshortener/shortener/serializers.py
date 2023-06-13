@@ -4,11 +4,11 @@ from .models import ShortenedURL
 
 
 class ShortenedURLSerializer(serializers.ModelSerializer):
-    short_url = serializers.SerializerMethodField()
+    short_url_code = serializers.SerializerMethodField()
 
     class Meta:
         model = ShortenedURL
-        fields = ["original_url", "short_url"]
+        fields = ["original_url", "short_url_code"]
 
-    def get_short_url(self, instance):
-        return instance.short_url
+    def get_short_url_code(self, instance):
+        return instance.short_url_code

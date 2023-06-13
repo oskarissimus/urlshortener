@@ -29,7 +29,7 @@ class ShortenedURLTests(APITestCase):
             original_url="http://example.com/very-very/long/url/even-longer"
         )
         # Now, retrieve it.
-        url = reverse("retrieve_original_url", args=[shortened_url.short_url])
+        url = reverse("retrieve_original_url", args=[shortened_url.short_url_code])
         response = self.client.get(url, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(

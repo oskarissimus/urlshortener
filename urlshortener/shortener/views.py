@@ -10,6 +10,6 @@ class CreateShortenedURLView(generics.CreateAPIView):
 
 
 class RetrieveOriginalURLView(generics.RetrieveAPIView):
-    lookup_field = "short_url"
+    lookup_field = "short_url_code"
     queryset = ShortenedURL.objects.all()
     serializer_class = ShortenedURLSerializer
