@@ -1,3 +1,15 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from .models import ShortenedURL
+from .serializers import ShortenedURLSerializer
+
+
+class CreateShortenedURLView(generics.CreateAPIView):
+    queryset = ShortenedURL.objects.all()
+    serializer_class = ShortenedURLSerializer
+
+
+class RetrieveOriginalURLView(generics.RetrieveAPIView):
+    lookup_field = "short_url"
+    queryset = ShortenedURL.objects.all()
+    serializer_class = ShortenedURLSerializer
