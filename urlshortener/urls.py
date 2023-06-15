@@ -11,7 +11,9 @@ SchemaView = get_schema_view(
         description="A simple URL shortener API",
     ),
     public=True,
-    permission_classes=(permissions.AllowAny,),
+    permission_classes=[
+        permissions.AllowAny,
+    ],
 )
 
 urlpatterns = [
