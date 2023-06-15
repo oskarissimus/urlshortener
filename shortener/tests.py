@@ -6,7 +6,7 @@ from .models import ShortenedURL
 
 
 class ShortenedURLTests(APITestCase):
-    def test_create_shortened_url(self):
+    def test_create_shortened_url(self) -> None:
         """
         Ensure we can create a new shortened URL object.
         """
@@ -20,7 +20,7 @@ class ShortenedURLTests(APITestCase):
             "http://example.com/very-very/long/url/even-longer",
         )
 
-    def test_retrieve_original_url(self):
+    def test_retrieve_original_url(self) -> None:
         """
         Ensure we can retrieve the original URL from a shortened URL.
         """
