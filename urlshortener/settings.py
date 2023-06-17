@@ -22,12 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = getenv("SECRET_KEY")
-SWAGGER_DEFAULT_API_URL = getenv("DEFAULT_API_URL")
-SWAGGER_SETTINGS = {
-    "DEFAULT_API_URL": SWAGGER_DEFAULT_API_URL,
-}
-
-ALLOWED_HOSTS = getenv("ALLOWED_HOSTS", "localhost:8000").split(",")
+ALLOWED_HOSTS = getenv("ALLOWED_HOSTS", "localhost").split(",")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
