@@ -2,6 +2,8 @@
 
 Welcome to the URL Shortener API project. This is a simple Django REST framework application that allows users to shorten long URLs.
 
+![Swagger UI](./shortener.png)
+
 ## Features 🌟
 
 - **URL Shortening**: Convert your long URLs into short ones.
@@ -13,38 +15,30 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites 📋
 
-- Python 3.8 or higher
-- Poetry
-- Django 3.1
-- Django Rest Framework
-- drf-yasg (for Swagger docs)
+- Python 3.10
+- Poetry 1.5.1
 
 ### Installation 🔧
 
-1. Clone this repository
-    ```
-    git clone https://github.com/oskarissimus/urlshortener.git
-    ```
-2. Navigate into the repo directory
-    ```
-    cd urlshortener
-    ```
-3. Install dependencies using Poetry
-    ```
-    poetry install
-    ```
-4. Navigate into the django directory
-    ```
-    cd urlshortener
-    ```
-5. Apply migrations
-    ```
-    poetry run python manage.py migrate
-    ```
-6. Create .env file based on .example.env and fill in the required values
-    ```
-    cp .example.env .env
-    ```
+```bash
+# Clone this repository
+git clone https://github.com/oskarissimus/urlshortener.git
+
+# Navigate into the repo directory
+cd urlshortener
+
+# Install dependencies using Poetry
+poetry install
+
+# Navigate into the django directory
+cd urlshortener
+
+# Apply migrations
+poetry run python manage.py migrate
+
+# Create .env file based on .example.env and fill in the required values
+cp .example.env .env
+```
 
 ### Running the Server 💻
 
@@ -63,4 +57,53 @@ You can run the test suite using the following command:
 ```bash
 poetry run dotenv run python manage.py test
 ```
+
+## Static Code Analysis 🔍
+
+### Linting
+You can run the linter (pylint) using the following command:
+
+```bash
+poetry run pylint urlshortener shortener
+```
+
+### Formatting
+You can run the formatter (black + isort) using the following command:
+
+```bash
+poetry run black
+```
+
+### Type Checking
+You can run the type checker (mypy) using the following command:
+
+```bash
+poetry run mypy urlshortener shortener
+```
+
+## Contenerization 🐳
+
+You can build the Docker image using the following command:
+
+```bash
+docker build -t urlshortener .
+```
+
+You can run the Docker image using the following command:
+
+```bash
+docker run -p 8000:80 -e SECRET_KEY=secret -e DEFAULT_API_URL=http://localhost:8000 urlshortener
+```
+
+## Deployment 🚀
+
+You can access the deployed API at https://urlshortener-eckryjl6ta-lm.a.run.app/swagger/
+
+## Built With 🛠️
+
+- [Django](https://www.djangoproject.com/) - The web framework used
+- [Django REST framework](https://www.django-rest-framework.org/) - The REST API framework used
+- [Poetry](https://python-poetry.org/) - Dependency Management
+- [Docker](https://www.docker.com/) - Containerization
+- [Google Cloud Run](https://cloud.google.com/run) - Deployment
 
