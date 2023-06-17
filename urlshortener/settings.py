@@ -33,9 +33,6 @@ ALLOWED_HOSTS = [getenv("ALLOWED_HOSTS").split(",")] if getenv("ALLOWED_HOSTS") 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS: list[str] = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
