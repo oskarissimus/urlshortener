@@ -27,7 +27,7 @@ SWAGGER_SETTINGS = {
     "DEFAULT_API_URL": SWAGGER_DEFAULT_API_URL,
 }
 
-ALLOWED_HOSTS = getenv("ALLOWED_HOSTS").split(",") if getenv("ALLOWED_HOSTS") else []
+ALLOWED_HOSTS = getenv("ALLOWED_HOSTS", "localhost:8000").split(",")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
