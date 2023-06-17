@@ -1,11 +1,9 @@
-from typing import Any
-
 from rest_framework import serializers
 
 from .models import ShortenedURL
 
 
-class ShortenedURLSerializer(serializers.ModelSerializer[Any]):
+class ShortenedURLSerializer(serializers.ModelSerializer):
     short_url_code = serializers.SerializerMethodField()
 
     class Meta:

@@ -22,9 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = getenv("SECRET_KEY")
+SWAGGER_DEFAULT_API_URL = getenv("DEFAULT_API_URL")
+SWAGGER_SETTINGS = {
+    "DEFAULT_API_URL": SWAGGER_DEFAULT_API_URL,
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS: list[str] = []
 
@@ -119,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
