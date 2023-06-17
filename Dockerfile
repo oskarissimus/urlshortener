@@ -20,6 +20,7 @@ RUN poetry install
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate
 
 # Copy Nginx and supervisor configurations
 COPY nginx.conf /etc/nginx/sites-available/default
