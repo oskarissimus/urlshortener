@@ -1,4 +1,4 @@
-# URL Shortener API 😄🚀
+# URL Shortener API 🔗🚀
 
 Welcome to the URL Shortener API project. This is a simple Django REST framework application that allows users to shorten long URLs.
 
