@@ -30,9 +30,6 @@ cd urlshortener
 # Install dependencies using Poetry
 poetry install
 
-# Navigate into the django directory
-cd urlshortener
-
 # Apply migrations
 poetry run python manage.py migrate
 
@@ -48,7 +45,7 @@ Run the Django development server
 poetry run dotenv run python manage.py runserver
 ```
 
-You can now access the API at http://localhost:8000/shortener and the Swagger docs at http://localhost:8000/swagger/.
+You can now access the Swagger docs at http://localhost:8000/swagger/.
 
 ## Running the Tests 🧪
 
